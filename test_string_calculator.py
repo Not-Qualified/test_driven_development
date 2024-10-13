@@ -18,6 +18,11 @@ class TestStringCalculator(unittest.TestCase):
     
     def test_multiple_numbers(self):
         self.assertEqual(self.calculator.add("1,2,3,4,5"), 15)
+    
+    def test_negative_numbers(self):
+        with self.assertRaises(ValueError) as error:
+            self.calculator.add("1,-3,-4,-5,-6,8,9")
+        self.assertEqual(str(error.exception), "Negative numbers are not allowed: -3, -4, -5, -6")
 
 
 if __name__ == "__main__":
