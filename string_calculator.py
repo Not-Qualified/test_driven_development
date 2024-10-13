@@ -11,7 +11,6 @@ class StringCalculator:
         # Setting up delimiter as there can be other than ","
         if numbers.startswith("//"):
             delimiter, numbers = numbers.split('\n', 1)
-            print(f"{delimiter[2:]=}")
             delimiter = f"[{delimiter[2:]}\n]"
         else:
             delimiter = "[,\n]"
@@ -24,7 +23,6 @@ class StringCalculator:
         if negatives:
             raise ValueError(f"Negative numbers are not allowed: {', '.join(map(str, negatives))}")
         
-
         return sum(nums)
 
 
