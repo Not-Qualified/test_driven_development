@@ -5,11 +5,13 @@ class StringCalculator:
         if not numbers:
             return 0
 
-        # Returns the sum of numbers
+        # Calculation the sum of numbers
         nums = [int(num) for num in numbers.split(",")]
+        
+        # Checking for negative values, and raising errors if so
         negatives = [num for num in nums if num < 0]
-
         if negatives:
             raise ValueError(f"Negative numbers are not allowed: {', '.join(map(str, negatives))}")
         
+
         return sum(nums)
